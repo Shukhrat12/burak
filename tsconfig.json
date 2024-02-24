@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "module": "CommonJS",
+      "outDir": "./dist",
+      "paths": {
+        "*": ["node_modules/*"]
+      },
+      "removeComments": true,   
+      "skipLibCheck": true,
+      "strict": true,
+      "target":"ES2020",
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
+  }
