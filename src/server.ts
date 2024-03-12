@@ -1,8 +1,7 @@
 import dotenv from 'dotenv';
+dotenv.config();
 import mongoose from 'mongoose';
 import app from './app';
-
-dotenv.config();
 
 mongoose
 .connect(process.env.MONGO_URL as string, {})
