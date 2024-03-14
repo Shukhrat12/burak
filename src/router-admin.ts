@@ -17,8 +17,8 @@ routerAdmin.get("/check-me", restaurantController.checkAuthSession)
 
 /** Product */
 routerAdmin.get("/product/all", productController.getAllProducts)
-routerAdmin.post("/product/create", productController.getAllProducts)
-routerAdmin.post("/product/:id", productController.getAllProducts)
+routerAdmin.post("/product/create", restaurantController.verifyRestaurant, productController.createNewProduct)
+routerAdmin.post("/product/:id", restaurantController.verifyRestaurant, productController.updateChosenProduct)
 
 
 /** User */
