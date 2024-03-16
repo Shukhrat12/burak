@@ -1,24 +1,18 @@
-// L-TASK: 
+// M-TASK: 
 
-// Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
-// MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
+// Shunday function yozing, u raqam lard an tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
+// MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
 
 // @MITASK
 
-function reverseSentence(str:string) {
-  const words = str.split(" ");
-  let revSentence = "";
-  for (let i = 0; i < words.length; i++) {
-    const word = words[i]
-    let revWord = "";
-    for (let j = word.length-1; j>=0;  j--) {
-      const element = word[j];
-      revWord += element
-    }
-    revSentence = revSentence + revWord + " " 
+function getSquareNumbers(nums: number[]) {
+  var list=[];
+  for (let i = 0; i < nums.length; i++) {
+    const element = nums[i];
+    list.push({number: element, square: element*element})
   }
-  return revSentence
+  return list;
 }
 
-const result = reverseSentence("we like coding")
+const result = getSquareNumbers([1, 2, 3])
 console.log(result)
