@@ -5,6 +5,8 @@ import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.enum"
 import Errors, { HttpCode, Message } from "../libs/Errors";
 
+const memberService = new MemberService();
+
 const restaurantController: T = {};
 restaurantController.goHome = (req: Request, res: Response) => {
     try {
@@ -113,6 +115,18 @@ restaurantController.verifyRestaurant = (req: AdminRequest, res: Response, next:
     } else {
         const message = Message.NOT_AUTHENTICATED;
         res.send(`<script> alert("${message}"); window.location.replace('/admin/login') </script>`)
+    }
+}
+
+restaurantController.getAllUsers = async (req: Request, res: Response) => {
+    try {
+        console.log('getAllUsers')
+        const result = await memberService.getAllUsers()
+        res.render("users", {users: result})
+    } catch (error) {
+        console.log("Error, getAllProducts", error)
+        if (error instanceof Errors) res.status(error.code).json(error)
+        else res.status(Errors.standard.code).json(Errors.standard);
     }
 }
 
