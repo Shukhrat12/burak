@@ -118,13 +118,27 @@ restaurantController.verifyRestaurant = (req: AdminRequest, res: Response, next:
     }
 }
 
-restaurantController.getAllUsers = async (req: Request, res: Response) => {
+restaurantController.getUsers = async (req: Request, res: Response) => {
     try {
-        console.log('getAllUsers')
-        const result = await memberService.getAllUsers()
+        console.log('getUsers')
+        const result = await memberService.getUsers()
         res.render("users", {users: result})
     } catch (error) {
-        console.log("Error, getAllProducts", error)
+        console.log("Error, getUsers", error)
+        res.redirect('/admin/login')
+    }
+}
+
+restaurantController.updateChosenUser = async (req: Request, res: Response) => {
+    try {
+        console.log('updateChosenUser')
+        
+        const result = await memberService.updateChosenUser(req.body)
+        
+        res.status(HttpCode.OK).json({data: result})
+
+    } catch (error) {
+        console.log("Error, updateChosenUser", error)
         if (error instanceof Errors) res.status(error.code).json(error)
         else res.status(Errors.standard.code).json(Errors.standard);
     }

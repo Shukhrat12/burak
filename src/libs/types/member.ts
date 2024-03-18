@@ -41,3 +41,15 @@ export interface AdminRequest extends Request {
     file: Express.Multer.File;
     files: Express.Multer.File[];
 }
+
+export interface MemberUpdateInput {
+    _id: ObjectId;
+    memberType?: MemberType;
+    memberStatus?: MemberStatus;
+    memberNick?: string;
+    memberPhone?: string;
+    memberPassword?: string;
+    memberAddress?: string;
+    memberDesc?: string;
+    memberImage?: string;
+}
