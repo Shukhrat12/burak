@@ -1,18 +1,32 @@
-// M-TASK: 
+// N-TASK: 
 
-// Shunday function yozing, u raqam lard an tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
-// MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
+// Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
+// MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
 
 // @MITASK
 
-function getSquareNumbers(nums: number[]) {
-  var list=[];
-  for (let i = 0; i < nums.length; i++) {
-    const element = nums[i];
-    list.push({number: element, square: element*element})
-  }
-  return list;
+//Using For loop
+
+// function palindromCheck(str: string) {
+//   let rev = ""
+//   for (let i = str.length-1; i >= 0; i--) {
+//     const ele = str[i];
+//     rev += ele
+//   }
+//   if (rev === str) {
+//     return true
+//   } else {
+//     return false
+//   }
+// }
+
+// using iteration methods
+
+function palindromCheck(str: string) {
+  let rev = ""
+  str.split("").reverse().map((ele) => rev += ele)
+  return rev === str ? true : false
 }
 
-const result = getSquareNumbers([1, 2, 3])
+const result = palindromCheck("madam")
 console.log(result)
