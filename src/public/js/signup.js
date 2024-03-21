@@ -23,10 +23,6 @@ $(function () {
             $(this).siblings(".upload-name").val(fileName)
         }
     })
-
-
-
-
 });
 
 function validateSignupForm() {
