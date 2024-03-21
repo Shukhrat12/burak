@@ -1,32 +1,23 @@
-// N-TASK: 
+// O-TASK:
 
-// Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
-// MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
+import e from "express";
+
+// Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
+// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
 
 // @MITASK
 
-//Using For loop
 
-// function palindromCheck(str: string) {
-//   let rev = ""
-//   for (let i = str.length-1; i >= 0; i--) {
-//     const ele = str[i];
-//     rev += ele
-//   }
-//   if (rev === str) {
-//     return true
-//   } else {
-//     return false
-//   }
-// }
-
-// using iteration methods
-
-function palindromCheck(str: string) {
-  let rev = ""
-  str.split("").reverse().map((ele) => rev += ele)
-  return rev === str ? true : false
+function calculateSumOfNumbers(num: any[]) {
+  let sum = 0;
+  for (let i = 0; i < num.length; i++) {
+    const element = num[i];
+    if(typeof element === "number") {
+      sum += element
+    }
+  }
+  return sum;
 }
 
-const result = palindromCheck("madam")
+const result = calculateSumOfNumbers([10, "10", {son: 10}, true, 35])
 console.log(result)
