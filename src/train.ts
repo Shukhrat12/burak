@@ -1,23 +1,13 @@
-// O-TASK:
+// P-TASK:
 
-import e from "express";
-
-// Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
-// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
+// Shunday function yozing, u object qabul qilsin va arrayni object arrayga otkazib arrayni qaytarsin.
+// MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 
 // @MITASK
 
-
-function calculateSumOfNumbers(num: any[]) {
-  let sum = 0;
-  for (let i = 0; i < num.length; i++) {
-    const element = num[i];
-    if(typeof element === "number") {
-      sum += element
-    }
-  }
-  return sum;
+function objectToArray(obj: any) {
+  return Object.entries(obj)
 }
 
-const result = calculateSumOfNumbers([10, "10", {son: 10}, true, 35])
+const result = objectToArray({a: 10, b: 20});
 console.log(result)
