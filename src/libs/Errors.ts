@@ -12,6 +12,7 @@ export enum HttpCode {
 export enum Message {
     SOMETHING_WENT_WRONG = "Something went wrong!",
     NO_DATA_FOUND = "No data is found!",
+    BLOCKED_USER = "Your account has been disactivated, please contact the restaurant administration!",
     CREATE_FAILED = "Create is failed!",
     UPDATE_FAILED = "Update is failed!",
     USED_NICK_PHONE = "You are inserting already used nick or phone!",
