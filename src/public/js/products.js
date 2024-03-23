@@ -24,12 +24,12 @@ $(function() {
 })
 
 function validateForm() {
-    const productName = $('.product-name').val();
-    const productPrice = $('.product-name').val();
-    const productLeftCount = $('.product-name').val();
-    const productCollection = $('.product-name').val();
-    const productDesc = $('.product-name').val();
-    const productStatus = $('.product-name').val();
+    const productName = $('.product-name').val(),
+     productPrice = $('.product-name').val(),
+     productLeftCount = $('.product-name').val(),
+     productCollection = $('.product-name').val(),
+     productDesc = $('.product-name').val(),
+     productStatus = $('.product-name').val();
     
     if (
         productName === "" ||
@@ -47,8 +47,6 @@ function validateForm() {
 
 function previewFileHandler(input, order) {
     const imgClassName = input.className;
-    console.log("input: ", input)
-    
     const file = $(`.${imgClassName}`).get(0).files[0];
     const fileType = file["type"];
     const validImageType = ["image/jpg", "image/jpeg", "image/png"];
